@@ -51,7 +51,7 @@ data "amazon-ami" "linux" {
     virtualization-type = "hvm"
   }
   most_recent = true
-  owners      = ["137112412989"]
+  owners      = ["amazon"]
   region      = "${var.aws_region}"
 }
 
