@@ -71,8 +71,8 @@ source "amazon-ebs" "linux" {
   region            = "${var.aws_region}"
   source_ami        = "${data.amazon-ami.linux.id}"
   ssh_username      = "ec2-user"
-  subnet_id         = "var.subnet"
-  vpc_id            = "var.vpc"
+  subnet_id         = var.subnet
+  vpc_id            = var.vpc
   tags = {
       Name = "Lee"
   }
@@ -82,7 +82,7 @@ build {
   sources = ["source.amazon-ebs.linux"]
 
   provisioner "shell" {
-    inline = ["yum install ansible"]
+    inline = ["sudo amazon-linux-extras install ansible2"]
 }
 
   provisioner "ansible-local" {
