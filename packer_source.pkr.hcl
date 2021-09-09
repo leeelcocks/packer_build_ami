@@ -70,7 +70,7 @@ source "amazon-ebs" "linux" {
   instance_type     = "t2.micro"
   region            = "${var.aws_region}"
   security_group_id = "${var.security_group}"
-  source_ami        = "${data.amazon-ami.windows.id}"
+  source_ami        = "${data.amazon-ami.linux.id}"
   ssh_username      = "ec2-user"
   subnet_id         = "var.subnet"
   vpc_id            = "var.vpc"
