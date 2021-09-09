@@ -46,7 +46,7 @@ variable "subnet" {
 
 data "amazon-ami" "linux" {
   filters = {
-    name                = "amazon/amzn2-ami-hvm-*"
+    name                = "amzn2-ami-hvm-2.0-*"
     root-device-type    = "ebs"
     virtualization-type = "hvm"
   }
